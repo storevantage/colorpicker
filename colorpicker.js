@@ -241,8 +241,12 @@
 				if (top + 176 > viewPort.t + viewPort.h) {
 					top -= this.offsetHeight + 176;
 				}
-				if (left + 356 > viewPort.l + viewPort.w) {
-					left -= 356;
+				if (left + 406 > viewPort.l + viewPort.w) {
+					if (left - 406 < 0) {
+                        left = 0;
+                    } else {
+                        left -= 406;
+                    }
 				}
 				cal.css({left: left + 'px', top: top + 'px'});
 				if (cal.data('colorpicker').onShow.apply(this, [cal.get(0)]) != false) {
